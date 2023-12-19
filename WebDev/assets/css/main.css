@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
+
+:root {
+  --primary: rgb(0, 0, 200);
+  --secondary: royalblue;
+  --text: #1a1818;
+  --background: #151720;
+  --heavy: 500;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  font-size: 120%;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 47px;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.bi-menu-button-wide {
+  justify-self: flex-start;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  /*margin-inline-start: 3px;
+  margin-inline-end: 3px;*/
+  font-family: 'Poppins', Sans-Serif;
+  font-weight: var(--heavy);
+  font-size: 1em;
+  margin-block-end: 20px;
+}
+
+form {
+  background-color: var(--background);
+  padding: 10px;
+  margin: 0px auto;
+  width: 300px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 20px;
+  border: none;
+  padding: 15px;
+  outline: none;
+  cursor: pointer;
+  transition-duration: 1s;
+  transition-property: outline;
+}
+
+form input {
+  color: white;
+  font-family: 'Poppins';
+  font-size: 16px;
+  font-weight: 400;
+  width: 200px;
+  border: none;
+  outline: none;
+  transition-duration: 1s;
+  transition-property: outline;
+  background-color: transparent;
+  letter-spacing: 1px;
+}
+
+form input::placeholder {
+  color: white;
+}
+
+form:hover {
+  outline: 1px solid var(--primary);
+  box-shadow: 2px 1px 2px 2px var(--background);
+}
+
+aside {
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: scroll;
+  gap: 10px;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+}
+
+aside img {
+  aspect-ratio: 4/2;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.collections {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 200px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-block-end: 20px;
+  /* border:1px solid rgba(0,0,0,0.3); */
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  /* border:1px solid rgba(0,0,0,0.3); */
+  border-radius: 15px;
+  /* background-color: #dddd;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--text);
+}
+
+figure:hover {
+  border-bottom: none;
+  border-left: 1px solid var(--primary)
+}
+
+.collection-image {
+  aspect-ratio: 1/2;
+  width: 100px;
+  height: 100px;
+  /* border-top-left-radius:13px;
+  border-top-right-radius:13px; */
+  border-radius: 20px;
+}
+
+.bi-dash,
+.bi-cart-plus {
+  border: 1px solid black;
+  padding: 1px;
+  fill: var(--background);
+  height: 30px;
+  width: 30px;
+  border-color: var(--background);
+}
+
+.collect {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+figure button {
+  /* background-color: var(--secondary); */
+  border: none;
+  width: 100%;
+  padding: 5px;
+  color: var(--secondary);
+  font-size: 16px;
+  font-family: 'Poppins', Sans-Serif;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: inherit;
+
+}
+
+.filterContent {
+  display: none;
+  position: absolute;
+  top: 80;
+  right: 0;
+  width: 100%;
+  height: auto;
+  /* box-shadow :2px 2px 2px 2px var(--secondary); */
+  background-color: white;
+  ;
+  z-index: 1;
+  animation: filter .5s linear;
+}
+
+.active {
+  display: block;
+}
+
+.ul-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.filterContent ul li {
+  cursor: pointer;
+  list-style-type: none;
+  margin: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.filterContent ul li:hover {
+  border-bottom: 1px solid var(--primary);
+  padding: 5px;
+  color: var(--primary);
+}
+
+@keyframes filter {
+  from {
+    bottom: 0;
+    opacity: 0.1;
+  }
+
+  to {
+    bottom: 80;
+    opacity: 1;
+  }
+}
